@@ -29,7 +29,7 @@ const HomeScreen = () => {
 
   const [selectedDates, setSelectedDates] = useState();
   const [rooms, setRooms] = useState(1);
-  const [adults, setAdults] = useState(2);
+  const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [modalVisibile, setModalVisibile] = useState(false);
 
@@ -72,6 +72,7 @@ const HomeScreen = () => {
       />
     );
   };
+
   console.log(route.params);
 
   return (
@@ -89,6 +90,7 @@ const HomeScreen = () => {
           >
             {/* Destination */}
             <Pressable
+              onPress={() => navigation.navigate("Search")}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -100,7 +102,9 @@ const HomeScreen = () => {
               }}
             >
               <Feather name="search" size={24} color="black" />
-              <TextInput placeholder="Enter your Destination" />
+              <Text>
+                {route?.params ? route.params.input : "Enter your Destination"}
+              </Text>
             </Pressable>
 
             {/* Selected Dates */}
@@ -335,7 +339,7 @@ const HomeScreen = () => {
             }}
           >
             <Text style={{ fontSize: 16, fontWeight: "500" }}>Rooms</Text>
-            <Pressable
+            <View
               style={{ flexDirection: "row", alignItems: "center", gap: 10 }}
             >
               <Pressable
@@ -351,7 +355,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
@@ -386,7 +390,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
@@ -394,7 +398,7 @@ const HomeScreen = () => {
                   +
                 </Text>
               </Pressable>
-            </Pressable>
+            </View>
           </View>
 
           <View
@@ -422,7 +426,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
@@ -457,7 +461,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
@@ -493,7 +497,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
@@ -528,7 +532,7 @@ const HomeScreen = () => {
                 <Text
                   style={{
                     textAlign: "center",
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: "600",
                     paddingHorizontal: 6,
                   }}
