@@ -4,7 +4,6 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { Octicons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-// import PropertyCard from "../components/PropertyCard";
 import { BottomModal } from "react-native-modals";
 import { ModalFooter } from "react-native-modals";
 import { SlideAnimation } from "react-native-modals";
@@ -12,8 +11,6 @@ import { ModalTitle } from "react-native-modals";
 import { FontAwesome } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { ModalContent } from "react-native-modals";
-// import { collection, getDocs } from "firebase/firestore";
-// import { db } from "../firebase";
 import data from "../placeData";
 import PropertyCard from "../components/PropertyCard";
 
@@ -154,28 +151,6 @@ const PlacesScreen = () => {
             ))
           )}
       </ScrollView>
-
-      {/* {loading ? (
-        <Text>Fetching places....</Text>
-      ) : (
-        <ScrollView style={{ backgroundColor: "#F5F5F5" }}>
-          {sortedData
-            ?.filter((item) => item.place === route.params.place)
-            .map((item) =>
-              item.properties.map((property, index) => (
-                <PropertyCard
-                  key={index}
-                  rooms={route.params.rooms}
-                  children={route.params.children}
-                  adults={route.params.adults}
-                  selectedDates={route.params.selectedDates}
-                  property={property}
-                  availableRooms={property.rooms}
-                />
-              ))
-            )}
-        </ScrollView>
-      )} */}
 
       <BottomModal
         onBackdropPress={() => setModalVisible(!modalVisible)}
